@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.test.setOnClickListener{
-            binding.test.text = "hello"
+            binding.test.text = Cards.cardA.name
         }
 
     }
