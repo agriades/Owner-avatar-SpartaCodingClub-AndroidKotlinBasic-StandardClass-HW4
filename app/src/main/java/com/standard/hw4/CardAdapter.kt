@@ -29,7 +29,7 @@ class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAd
         holder.name.text = iData[position].iName
         holder.cardNumber.text = iData[position].iCardNumber
         holder.expiryDate.text = iData[position].iExpiryDate
-        holder.balance.text = format.format(iData[position].iBalance)
+        holder.balance.text = "$" + format.format(iData[position].iBalance)
         holder.background.setImageResource(iData[position].iBackground!!)
     }
 
