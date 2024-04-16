@@ -27,12 +27,13 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(view: View, position: Int) {
                 val intentDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
 
-
                 val bundle = Bundle()
                 bundle.putString("cardName",dataList[position].iName)
                 bundle.putString("cardNumber",dataList[position].iCardNumber)
                 bundle.putString("cardExpiryDate",dataList[position].iExpiryDate)
                 bundle.putString("cardBalance",dataList[position].iBalance)
+
+                intentDetailActivity.putExtra("cardInfo", bundle)
                 startActivity(intentDetailActivity)
             }
         }
