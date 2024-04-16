@@ -20,6 +20,12 @@ class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAd
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
+        //클릭 이벤트
+        holder.itemView.setOnClickListener {
+            itemClick?.onClick(it, position)
+        }
+
+
         holder.name.text = iData[position].iName
         holder.cardNumber.text = iData[position].iCardNumber
         holder.expiryDate.text = iData[position].iExpiryDate
