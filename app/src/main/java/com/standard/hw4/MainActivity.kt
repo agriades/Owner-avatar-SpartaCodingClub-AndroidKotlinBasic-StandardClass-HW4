@@ -12,5 +12,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(binding.root)
+
+        binding.test.setOnClickListener{
+            binding.test.text = "hello"
+        }
+
     }
+
 }
