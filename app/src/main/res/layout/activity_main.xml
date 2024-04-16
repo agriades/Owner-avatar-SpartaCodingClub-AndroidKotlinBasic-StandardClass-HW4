@@ -7,60 +7,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:layout_width="63dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginStart="35dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
     <TextView
+        android:id="@+id/top_bar_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/chakra_petch_600_semibold"
         android:text="Select a Card"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="52dp" />
+        android:textColor="#1E1E1E"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/mid_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="34dp"
+        android:fontFamily="@font/chakra_petch_500_medium"
         android:text="Available Balance"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="104dp" />
-
-    <!-- San Francisco Display, 700, #5163BF -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="$2,85,856.20"
-        android:textSize="35dp"
-        android:textColor="#5163BF"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="135dp" />
-
-    <!-- San Francisco Display, 400, #878787 -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please..."
         android:textColor="#878787"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_bar_textview" />
+
+    <TextView
+        android:id="@+id/mid_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/chakra_petch_700_bold"
+        android:text="$2,85,856.20"
+        android:textColor="#5163BF"
+        android:textSize="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mid_title" />
+
+
+    <TextView
+        android:id="@+id/mid_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please, select a card you are willing to do the money transfer with or add a new card using the plus button below."
+        android:textColor="#878787"
+        android:fontFamily="@font/chakra_petch_400_regular"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="197dp" />
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginTop="31dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mid_balance"/>
 
     <!-- San Francisco Display, 600, #1E1E1E -->
     <TextView
-        android:id="@+id/select"
+        android:id="@+id/btm_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select a Card"
         android:textColor="#1E1E1E"
         android:textSize="16dp"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="292dp" />
+        android:fontFamily="@font/chakra_petch_600_semibold"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="43dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mid_desc"/>
 
-
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
