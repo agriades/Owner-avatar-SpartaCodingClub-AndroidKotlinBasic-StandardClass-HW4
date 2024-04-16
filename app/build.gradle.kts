@@ -7,6 +7,10 @@ android {
     namespace = "com.standard.hw4"
     compileSdk = 34
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.standard.hw4"
         minSdk = 24
