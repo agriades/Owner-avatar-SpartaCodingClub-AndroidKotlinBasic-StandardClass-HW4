@@ -27,15 +27,12 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(view: View, position: Int) {
                 val intentDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
 
-                val cardName =  dataList[position].iName
-                val cardNumber =  dataList[position].iCardNumber
-                val cardExpiryDate =  dataList[position].iExpiryDate
-                val cardBalance = dataList[position].iBalance
 
-                intentDetailActivity.putExtra("cardName", dataList[position].iName)
-                intentDetailActivity.putExtra("cardNumber", dataList[position].iCardNumber)
-                intentDetailActivity.putExtra("cardExpiryDate", dataList[position].iExpiryDate)
-                intentDetailActivity.putExtra("cardBalance", dataList[position].iBalance)
+                val bundle = Bundle()
+                bundle.putString("cardName",dataList[position].iName)
+                bundle.putString("cardNumber",dataList[position].iCardNumber)
+                bundle.putString("cardExpiryDate",dataList[position].iExpiryDate)
+                bundle.putString("cardBalance",dataList[position].iBalance)
                 startActivity(intentDetailActivity)
             }
         }
