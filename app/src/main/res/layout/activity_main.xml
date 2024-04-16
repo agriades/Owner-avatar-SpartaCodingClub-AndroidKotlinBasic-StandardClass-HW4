@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
         android:fontFamily="@font/chakra_petch_700_bold"
-        android:text="$2,85,856.20"
+        android:text="$0.00"
         android:textColor="#5163BF"
         android:textSize="35dp"
         app:layout_constraintStart_toStartOf="parent"

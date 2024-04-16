@@ -8,6 +8,6 @@ data class CardItem(
     val iName: String?,
     val iCardNumber: String?,
     val iExpiryDate: String?,
-    val iBalance: String?,
+    val iBalance: Double?,
     val iBackground: Int?
 ) : Parcelable

@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.standard.hw4.databinding.CardItemRecyclerViewBinding
+import java.text.DecimalFormat
 
 //데이터 저장할 데가 필요해서 adapter라는 걸 만들었다는 것까진 오케이. 근데 어케 쓰는 거지?
 class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAdapter.Holder>() {
-
+    var format: DecimalFormat = DecimalFormat("#,##,##0.00")
     interface ItemClick {
         fun onClick(view: View, position: Int)
     }
@@ -28,7 +29,7 @@ class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAd
         holder.name.text = iData[position].iName
         holder.cardNumber.text = iData[position].iCardNumber
         holder.expiryDate.text = iData[position].iExpiryDate
-        holder.balance.text = iData[position].iBalance
+        holder.balance.text = format.format(iData[position].iBalance)
         holder.background.setImageResource(iData[position].iBackground!!)
     }
 

@@ -6,9 +6,11 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.standard.hw4.databinding.ActivityMainBinding
+import java.text.DecimalFormat
 
 
 class MainActivity : AppCompatActivity() {
+    var format: DecimalFormat = DecimalFormat("#,##,##0.00")
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //전체 잔고 decimal format
+        var availableBalance: Double = 285856.20
+        binding.midBalance.text = "$" + format.format(availableBalance)
         //카드 엮어주기
         val dataList = mutableListOf(Cards.cardA, Cards.cardB, Cards.cardC)
         val adapter = CardAdapter(dataList)
@@ -27,13 +32,17 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(view: View, position: Int) {
                 val intentDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
 
-                val bundle = Bundle()
-                bundle.putString("cardName",dataList[position].iName)
-                bundle.putString("cardNumber",dataList[position].iCardNumber)
-                bundle.putString("cardExpiryDate",dataList[position].iExpiryDate)
-                bundle.putString("cardBalance",dataList[position].iBalance)
+                //Parcelize와 Bundle 사용하는 법을 모르겠다 흑흑.
+                val cardName =  dataList[position].iName
+                val cardNumber =  dataList[position].iCardNumber
+                val cardExpiryDate =  dataList[position].iExpiryDate
+                val cardBalance = dataList[position].iBalance
 
-                intentDetailActivity.putExtra("cardInfo", bundle)
+                intentDetailActivity.putExtra("cardName", dataList[position].iName)
+                intentDetailActivity.putExtra("cardNumber", dataList[position].iCardNumber)
+                intentDetailActivity.putExtra("cardExpiryDate", dataList[position].iExpiryDate)
+                intentDetailActivity.putExtra("cardBalance", format.format(dataList[position].iBalance))
+                //decimal format
                 startActivity(intentDetailActivity)
             }
         }
