@@ -9,6 +9,7 @@ import com.standard.hw4.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         adapter.itemClick = object : CardAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
                 val intentDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
+                var cardInfo: String = "홍길동"
+                intentDetailActivity.putExtra("cardInfo", cardInfo)
                 startActivity(intentDetailActivity)
             }
         }

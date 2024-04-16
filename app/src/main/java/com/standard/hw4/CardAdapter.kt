@@ -25,12 +25,11 @@ class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAd
             itemClick?.onClick(it, position)
         }
 
-
         holder.name.text = iData[position].iName
         holder.cardNumber.text = iData[position].iCardNumber
         holder.expiryDate.text = iData[position].iExpiryDate
         holder.balance.text = iData[position].iBalance
-        holder.background.setImageResource(iData[position].iBackground)
+        holder.background.setImageResource(iData[position].iBackground!!)
     }
 
     override fun getItemId(position: Int): Long {
