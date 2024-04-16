@@ -29,6 +29,12 @@ class MainActivity : AppCompatActivity() {
         binding.cardRecyclerView.adapter = adapter
         binding.cardRecyclerView.layoutManager = LinearLayoutManager(this)
 
+        //뒤로가기 버튼 누르면 바로 종료
+        binding.backBtn.setOnClickListener {
+            finish()
+        }
+
+
         //각 카드 클릭 시 DetailActivity로 이동
         adapter.itemClick = object : CardAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
