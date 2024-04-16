@@ -51,7 +51,7 @@
         android:id="@+id/mid_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Please, select a card you are willing to do the money transfer with or add a new card using the plus button below."
+        android:text="Please, select a card you are willing to do the money transfer with or add a new card using the plus button below."
         android:textColor="#878787"
         android:fontFamily="@font/chakra_petch_400_regular"
         android:textSize="15dp"
