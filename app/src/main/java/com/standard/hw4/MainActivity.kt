@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         adapter.itemClick = object : CardAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
                 val intentDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
-                var cardInfo: String = "홍길동"
+                val cardInfo = dataList[position].iName
                 intentDetailActivity.putExtra("cardInfo", cardInfo)
                 startActivity(intentDetailActivity)
             }
