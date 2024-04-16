@@ -4,17 +4,37 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.standard.hw4.databinding.CardItemRecyclerViewBinding
 
 //데이터 저장할 데가 필요해서 adapter라는 걸 만들었다는 것까진 오케이. 근데 어케 쓰는 거지?
-class CardAdapter(val iData: List<CardItem>): BaseAdapter() {
-    override fun getCount(): Int = iData.size
-    override fun getItem(position: Int): Any = iData[position]
-    override fun getItemId(position: Int): Long = position.toLong()
-    //위에는 그냥 데이터 list의 size, position, position의 toLong값을 항상 추가하나 보다.
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        //매개변수는 다른 코드 예시에서도 같은 것으로 보아 항상 이렇게 쓰나 봐.
-        val cardView: View
-        cardView = convertView as View
-        return cardView
+class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAdapter.Holder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val cardAdapterBinding = CardItemRecyclerViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return Holder(cardAdapterBinding)
+    }
+
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        holder.name.text = iData[position].iName
+        holder.cardNumber.text = iData[position].iCardNumber
+        holder.expiryDate.text = iData[position].iExpiryDate
+        holder.balance.text = iData[position].iBalance
+        holder.background.setImageResource(iData[position].iBackground)
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getItemCount(): Int {
+        return iData.size
+    }
+    inner class Holder(val cardAdapterBinding:CardItemRecyclerViewBinding): RecyclerView.ViewHolder(cardAdapterBinding.root) {
+        //CardItemRecyclerView 와 연결되므로 이 안에 있는 id를 써 주면 됨.
+        val name = cardAdapterBinding.cardName
+        val cardNumber = cardAdapterBinding.cardNumber
+        val expiryDate = cardAdapterBinding.cardExpiryDate
+        val balance = cardAdapterBinding.cardBalance
+        val background = cardAdapterBinding.cardBg
     }
 }

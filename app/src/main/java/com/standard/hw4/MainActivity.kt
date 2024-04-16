@@ -1,6 +1,5 @@
 package com.standard.hw4
 
-import android.R
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
