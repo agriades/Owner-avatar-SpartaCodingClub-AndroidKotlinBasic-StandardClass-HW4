@@ -12,8 +12,10 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val initExpiryDate = binding.expiryDate.text.toString()
-        binding.expiryDate.text = initExpiryDate + intent.getStringExtra("cardInfo")
+        binding.name.text = "이름: " + intent.getStringExtra("cardName")
+        binding.cardNumber.text = "카드 번호: " + intent.getStringExtra("cardNumber")
+        binding.expiryDate.text = "유효기간: " + intent.getStringExtra("cardExpiryDate")
+        binding.balance.text = "잔고: " + intent.getStringExtra("cardBalance")
 
     }
 }

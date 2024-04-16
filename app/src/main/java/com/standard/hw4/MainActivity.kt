@@ -26,8 +26,16 @@ class MainActivity : AppCompatActivity() {
         adapter.itemClick = object : CardAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
                 val intentDetailActivity = Intent(this@MainActivity, DetailActivity::class.java)
-                val cardInfo = dataList[position].iExpiryDate
-                intentDetailActivity.putExtra("cardInfo", cardInfo)
+
+                val cardName =  dataList[position].iName
+                val cardNumber =  dataList[position].iCardNumber
+                val cardExpiryDate =  dataList[position].iExpiryDate
+                val cardBalance = dataList[position].iBalance
+
+                intentDetailActivity.putExtra("cardName", dataList[position].iName)
+                intentDetailActivity.putExtra("cardNumber", dataList[position].iCardNumber)
+                intentDetailActivity.putExtra("cardExpiryDate", dataList[position].iExpiryDate)
+                intentDetailActivity.putExtra("cardBalance", dataList[position].iBalance)
                 startActivity(intentDetailActivity)
             }
         }
