@@ -3,12 +3,17 @@ package com.standard.hw4
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.standard.hw4.databinding.CardItemRecyclerViewBinding
 
 //데이터 저장할 데가 필요해서 adapter라는 걸 만들었다는 것까진 오케이. 근데 어케 쓰는 거지?
 class CardAdapter(val iData: MutableList<CardItem>): RecyclerView.Adapter<CardAdapter.Holder>() {
+
+    interface ItemClick {
+        fun onClick(view: View, position: Int)
+    }
+    var itemClick : ItemClick? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val cardAdapterBinding = CardItemRecyclerViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(cardAdapterBinding)
