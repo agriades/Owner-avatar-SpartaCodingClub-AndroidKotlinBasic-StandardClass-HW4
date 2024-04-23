@@ -3,7 +3,7 @@
 ### 해야 할 일
 1. activity_main.xml에 임시로 배치한 카드를 삭제하고, RecyclerView를 돌려놓기.
 2. card_item_recycler_view.xml에 같은 방식으로 ViewModel을 가져오는 것이 가능한지 확인하기.
-3. 가능할 경우: Card.kt의 getCardData()에서 return하는 초기값을 Card 단품이 아닌 List<Card> 또는 MutableList<Card> 등으로 변경하기. 단 항이 여러개이면 복잡해지므로 우선 list 내에 카드 하나만 넣기.
+3. 가능할 경우: Card.kt의 getCardData()에서 return하는 초기값을 Card 단품이 아닌 List<Card> 또는 MutableList<Card> 등으로 변경하기.<br/>단 항이 여러개이면 복잡해지므로 우선 list 내에 카드 하나만 넣기.
 4. card_item_recycler_view.xml에서 바인딩된 값을 불러올 수 있도록 수정하기. Card 단품 대신 List<Card>의 첫번째 인덱스 항이 불러와지면 된다.
 5. 카드가 여러 장일 때의 문제를 해결하기.
    
