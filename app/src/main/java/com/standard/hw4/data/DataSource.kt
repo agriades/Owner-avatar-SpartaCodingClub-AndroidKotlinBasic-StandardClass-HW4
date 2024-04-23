@@ -1,16 +1,17 @@
 package com.standard.hw4.data
 
 class DataSource {
+    fun getCardList() = cardList()
+
     companion object { //companion object가 즉 singleton이 된다.
-        private var INSTANCE : DataSource ?= null // [question] 무슨 의미지?
-        fun getDataSource() : DataSource { // [question] 왜 써야 하는지 모르겠지만 있으니까 우선 씀.
+        private var INSTANCE: DataSource? = null // [question] 무슨 의미지?
+        fun getDataSource(): DataSource { // [question] 왜 써야 하는지 모르겠지만 있으니까 우선 씀.
             return synchronized(DataSource::class) {
                 val newInstance = INSTANCE ?: DataSource()
                 INSTANCE = newInstance
                 newInstance
             }
         }
-        fun getCardList() = cardList()
     }
 }
 
