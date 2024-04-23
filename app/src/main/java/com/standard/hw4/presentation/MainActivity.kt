@@ -13,7 +13,6 @@ import java.text.DecimalFormat
 class MainActivity : AppCompatActivity() {
 
     //ViewModel 사용 구간
-    private val viewModel: CardViewModel by viewModels()
 
 
 
