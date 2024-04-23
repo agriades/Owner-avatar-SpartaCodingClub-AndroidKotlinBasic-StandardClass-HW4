@@ -1,7 +1,9 @@
 2024-04-23 23:08 현재 구현 상황:
 
 <h3><img align="left" width="200" src="https://github.com/agriades/Owner-avatar-SpartaCodingClub-AndroidKotlinBasic-StandardClass-HW4/assets/75528131/1fbf7f72-8af9-4af4-9658-4ac2d341a4a7"/>
-# Headline 
+
+ # < 2024-04-23 23:08 현재 구현 상황
+ 
 - RecyclerView와 ViewModel을 한 번에 다루려니 너무 복잡해서, ViewModel만 사용해 보았습니다.
 - MainActivity의 RecyclerView를 주석 처리하고, 테스트용 카드를 하나 만들어
 1. activity_main과 MainActivity의 데이터 바인딩 (뷰바인딩에 한번 더 DataBindingUtil 쓰는 데이터바인딩은 처음 해봐요!) > 바뀌니 처음 바인딩도 lateinit var binding으로 수정했음.
