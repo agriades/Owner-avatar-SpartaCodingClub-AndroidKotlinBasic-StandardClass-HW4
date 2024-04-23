@@ -1,6 +1,3 @@
-
-
----
 2024-04-23 23:08 현재 구현 상황:
 
 ![image](https://github.com/agriades/Owner-avatar-SpartaCodingClub-AndroidKotlinBasic-StandardClass-HW4/assets/75528131/1fbf7f72-8af9-4af4-9658-4ac2d341a4a7){: width="100" height="100"}
