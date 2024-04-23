@@ -4,7 +4,7 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class CardItem(
+data class Card(
     val iName: String?,
     val iCardNumber: String?,
     val iExpiryDate: String?,
