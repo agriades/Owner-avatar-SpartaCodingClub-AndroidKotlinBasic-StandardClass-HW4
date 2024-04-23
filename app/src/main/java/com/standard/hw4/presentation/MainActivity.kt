@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.standard.hw4.R
 import com.standard.hw4.data.cardList
 import com.standard.hw4.databinding.ActivityMainBinding
 import java.text.DecimalFormat
@@ -17,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     var format: DecimalFormat = DecimalFormat("#,##,##0.00")
 
     //0. 바인딩
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private lateinit var binding: ActivityMainBinding //추후 수정하게 되었으니 lateinit으로 선언
     //1. 뷰모델과 연결
     private val cardViewModel: CardViewModel by viewModels()
 
@@ -28,14 +30,15 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        //전체 잔고 decimal format
-        var availableBalance: Double = 285856.20
-        binding.midBalance.text = "$" + format.format(availableBalance)
-
+        binding.viewModel = cardViewModel
         binding.lifecycleOwner = this
         cardViewModel.refreshCardData()
+
+//        전체 잔고 decimal format - $ 단위 표시
+//        var availableBalance: Double = 285856.20
+//        binding.midBalance.text = "$" + format.format(availableBalance)
 
         //카드 엮어주기
 //        val dataList = cardList()

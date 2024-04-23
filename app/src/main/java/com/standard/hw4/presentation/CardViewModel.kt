@@ -16,7 +16,7 @@ import java.lang.IllegalArgumentException
 class CardViewModel: ViewModel() {
     private var cardRepository = CardRepository()
     private val _cardData = MutableLiveData<Card>()
-    val cardData: LiveData<Card> = _cardData
+    val cardData: LiveData<Card> = _cardData //얘를 불러옴
     fun refreshCardData() {
         val card = cardRepository.getCardData()
         _cardData.value = card
