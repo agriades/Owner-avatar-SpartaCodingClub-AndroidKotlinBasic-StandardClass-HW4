@@ -5,34 +5,34 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.standard.hw4.data.Cards
+import com.standard.hw4.data.cardList
 import com.standard.hw4.databinding.ActivityMainBinding
 import java.text.DecimalFormat
 
 
 class MainActivity : AppCompatActivity() {
 
-    //ViewModel 사용 구간
-
-
-
-    //ViewModel 사용 구간
-
+    //숫자 표현 방식
     var format: DecimalFormat = DecimalFormat("#,##,##0.00")
 
-    private lateinit var binding: ActivityMainBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
+    //0. 바인딩
+    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    //1. 뷰모델과 연결
+//private val cardViewModel by viewModels<CardViewModel> { 뷰모델 생성 코드 }
+    //2. 어댑터 연결. 어댑터가 뷰(메인 액티비티)가 아닌 뷰모델에서 정보를 가져와야?
+    //[question] ViewModel이 data가 아닌 presentation으로 분류되는 이유가 뭔가요?
 
-        //오버라이딩 및 layout xml 연결하기
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //전체 잔고 decimal format
         var availableBalance: Double = 285856.20
         binding.midBalance.text = "$" + format.format(availableBalance)
+
         //카드 엮어주기
-        val dataList = mutableListOf(Cards.cardA, Cards.cardB, Cards.cardC)
+        val dataList = cardList()
         val adapter = CardAdapter(dataList)
         binding.cardRecyclerView.adapter = adapter
         binding.cardRecyclerView.layoutManager = LinearLayoutManager(this)

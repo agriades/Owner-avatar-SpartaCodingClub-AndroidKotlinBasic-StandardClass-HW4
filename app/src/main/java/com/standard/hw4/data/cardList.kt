@@ -2,8 +2,8 @@ package com.standard.hw4.data
 
 import com.standard.hw4.R
 
-fun cardList(): List<Card> {
-    return listOf(
+fun cardList(): MutableList<Card> {
+    return mutableListOf(
         Card("DailyExpenses", "2423 3581 9503 2412", "07 / 24", 3100.30, R.drawable.card_bg_deepblue),
         Card("Katie", "1234 5678 9101 1121", "12 / 28", 999.99, R.drawable.card_bg_deeporange),
         Card("Anderson", "7777 7777 7777 7777", "01 / 26", 1000.00, R.drawable.card_bg_lightblue)
