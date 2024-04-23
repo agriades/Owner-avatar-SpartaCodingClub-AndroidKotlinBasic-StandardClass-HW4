@@ -127,7 +127,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:fontFamily="@font/chakra_petch_500_medium"
-            android:text="Kate"
+            android:text="@{viewModel.cardData.component1().toString()}"
             android:textColor="@color/white"
             android:textSize="12dp"
             app:layout_constraintStart_toStartOf="@id/card_bg"
