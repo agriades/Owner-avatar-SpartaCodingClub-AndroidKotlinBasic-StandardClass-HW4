@@ -22,4 +22,4 @@ class CardViewModelFactory: ViewModelProvider.Factory {
         throw IllegalArgumentException("Unknown ViewModel Class")
     }
 }
-}
+
