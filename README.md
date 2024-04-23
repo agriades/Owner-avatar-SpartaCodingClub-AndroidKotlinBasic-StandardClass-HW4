@@ -3,7 +3,7 @@
 ---
 2024-04-23 23:08 현재 구현 상황:
 
-![](https://github.com/agriades/Owner-avatar-SpartaCodingClub-AndroidKotlinBasic-StandardClass-HW4/assets/75528131/1fbf7f72-8af9-4af4-9658-4ac2d341a4a7 | width=100)
+![image](https://github.com/agriades/Owner-avatar-SpartaCodingClub-AndroidKotlinBasic-StandardClass-HW4/assets/75528131/1fbf7f72-8af9-4af4-9658-4ac2d341a4a7){: width="30%" height="30%}
 
 - RecyclerView와 ViewModel을 한 번에 다루려니 너무 복잡해서, ViewModel만 사용해 보았습니다.
 - MainActivity의 RecyclerView를 주석 처리하고, 테스트용 카드를 하나 만들어
