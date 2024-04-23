@@ -1,4 +1,4 @@
-package com.standard.hw4
+package com.standard.hw4.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

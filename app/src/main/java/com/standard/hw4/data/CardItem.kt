@@ -1,4 +1,4 @@
-package com.standard.hw4
+package com.standard.hw4.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

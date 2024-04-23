@@ -1,9 +1,10 @@
-package com.standard.hw4
+package com.standard.hw4.presentation
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.standard.hw4.data.CardItem
 import com.standard.hw4.databinding.CardItemRecyclerViewBinding
 import java.text.DecimalFormat
 

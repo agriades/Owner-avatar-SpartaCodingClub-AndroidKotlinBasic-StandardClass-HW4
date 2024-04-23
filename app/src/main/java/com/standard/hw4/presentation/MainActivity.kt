@@ -1,15 +1,24 @@
-package com.standard.hw4
+package com.standard.hw4.presentation
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.standard.hw4.data.Cards
 import com.standard.hw4.databinding.ActivityMainBinding
 import java.text.DecimalFormat
 
 
 class MainActivity : AppCompatActivity() {
+
+    //ViewModel 사용 구간
+    private val viewModel: CardViewModel by viewModels()
+
+
+
+    //ViewModel 사용 구간
+
     var format: DecimalFormat = DecimalFormat("#,##,##0.00")
 
     private lateinit var binding: ActivityMainBinding
