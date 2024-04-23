@@ -10,6 +10,7 @@ android {
 
     buildFeatures{
         viewBinding = true
+        dataBinding = true
     }
 
     defaultConfig {
@@ -41,8 +42,12 @@ android {
 }
 
 dependencies {
+    val activity_version = "1.9.0"
+    implementation("androidx.activity:activity:$activity_version")
+    implementation("androidx.activity:activity-ktx:$activity_version")
     val lifecycle_version = "2.7.0"
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
